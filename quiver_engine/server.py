@@ -12,10 +12,7 @@ from flask import Flask, send_from_directory
 from flask.json import jsonify
 from flask_cors import CORS
 
-try:
-    from gevent.wsgi import WSGIServer
-except ImportError:
-    from gevent.pywsgi import WSGIServer
+from gevent.pywsgi import WSGIServer
 
 from quiver_engine.util import (
     load_img, safe_jsonify, decode_predictions,
